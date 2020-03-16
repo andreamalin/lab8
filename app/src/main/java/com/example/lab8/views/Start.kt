@@ -44,10 +44,11 @@ class Start : Fragment() {
         //ViewModel
         viewModel = ViewModelProvider(activity!!).get(ViewModelGit::class.java)
 
-
+        searchUser()
 
         binding.searchUser.setOnClickListener{
-            searchUser()
+            showUser()
+            getReps()
         }
 
         binding.seeRepositories.setOnClickListener{
@@ -79,8 +80,6 @@ class Start : Fragment() {
                 } else {
                     Toast.makeText(activity, "$lastUser was not found", Toast.LENGTH_SHORT).show()
                     lastUser = ""
-                    showUser()
-                    getReps()
                 }
 
             }
