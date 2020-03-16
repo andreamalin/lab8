@@ -44,9 +44,10 @@ class Start : Fragment() {
         //ViewModel
         viewModel = ViewModelProvider(activity!!).get(ViewModelGit::class.java)
 
-        searchUser()
+
 
         binding.searchUser.setOnClickListener{
+            searchUser()
             showUser()
             getReps()
         }
